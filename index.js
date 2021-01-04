@@ -1,8 +1,11 @@
 require("dotenv").config({ path: __dirname + "/.env" });
+var cors = require("cors");
 
 const app = require("express")(),
-  session = require("express-session"),
-  http = require("http").createServer(app);
+  session = require("express-session");
+
+app.use(cors());
+http = require("http").createServer(app);
 
 // io = require('socket.io')(http);
 //   MongoStore = require('connect-mongo')(session);
