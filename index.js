@@ -1,8 +1,8 @@
 require("dotenv").config();
 
-const app = require("express")();
-// import session from "express-session";
-const http = require("http").createServer(app);
+const app = require("express")(),
+  session = require("express-session"),
+  http = require("http").createServer(app);
 // io = require('socket.io')(http);
 //   MongoStore = require('connect-mongo')(session);
 
@@ -35,10 +35,12 @@ const http = require("http").createServer(app);
 // });
 
 // An api endpoint that returns a list of available tables
-app.get("/getTables", (req, res) => {
+app.get("/api/getTables", (req, res) => {
   const list = ["Garretts Room", "High Rollers", "Test Table", "Mikis Table"];
   res.json(list);
   console.log("Sent list of tables");
 });
 
-http.listen();
+http.listen(8080, () => {
+  console.log("listening on *:8080");
+});
