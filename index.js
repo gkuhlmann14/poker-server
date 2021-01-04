@@ -35,7 +35,7 @@ const app = require("express")(),
 // });
 
 // An api endpoint that returns a list of available tables
-app.get("/api/getTables", (req, res) => {
+app.get("/getTables", (req, res) => {
   const list = ["Garretts Room", "High Rollers", "Test Table", "Mikis Table"];
   res.json(list);
   console.log("Sent list of tables");
