@@ -1,8 +1,9 @@
-require("dotenv").config();
+require("dotenv").config({ path: __dirname + "/.env" });
 
 const app = require("express")(),
   session = require("express-session"),
   http = require("http").createServer(app);
+
 // io = require('socket.io')(http);
 //   MongoStore = require('connect-mongo')(session);
 
@@ -37,15 +38,15 @@ const app = require("express")(),
 // An api endpoint that returns a list of available tables
 app.get("/tables", (req, res) => {
   const list = [
-    "Garretts Server",
+    "Garretts Room",
     "High Rollers",
     "Test Table",
-    "Table From Server",
+    "SERVER TABLE PORT",
   ];
   res.json(list);
   console.log("Sent list of tables");
 });
 
-http.listen(8080, () => {
-  console.log("listening on *:8080");
+http.listen(process.env.API_PORT, () => {
+  console.log("Listening on PORT", process.env.API_PORT);
 });
