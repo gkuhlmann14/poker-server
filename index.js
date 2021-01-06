@@ -9,10 +9,19 @@ http = require("http").createServer(app);
 // An api endpoint that returns a list of available tables
 app.get("/tables", (req, res) => {
   const list = [
-    "Garretts Room",
-    "High Rollers",
-    "Test Table",
-    "SERVER TABLE PORT",
+    {
+      id: 1,
+      title: "Garretts Table",
+    },
+
+    {
+      id: 2,
+      title: "Valid JSON",
+    },
+    {
+      id: 3,
+      title: "mikayla server table",
+    },
   ];
   res.json(list);
   console.log("Sent list of tables");
