@@ -1,7 +1,9 @@
 {
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon src/index.js",
+    "lint": "eslint ."
   },
+  "type": "module",
   "dependencies": {
     "connect-mongo": "^3.2.0",
     "cors": "^2.8.5",
